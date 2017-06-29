@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src='js/jquery-3.2.1.min.js'></script>
+</head>
+<body>
+	<div class="container">
+		<input type="text" id="txt_input"" name="txtInput" placeholder="type text to convert" onkeyup="convert();"><br><br>
+		<input type="text" id="txt_output" name="md5"><button>Copy</button>
+
+	</div>
+</body>
+<style>
+	input[type=text] {
+	    width: 80%;
+	    padding: 12px 20px;
+	    margin: 8px 30;
+	    display: inline-block;
+	    border: 2px solid #ccc;
+	    box-sizing: border-box;
+	    margin-left: 25px;
+	    font-size: 35px;
+	}
+	
+	.container{
+		margin: auto;
+	}
+
+	button {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 14px 20px;
+	    margin: 8px 0;
+	    border: none;
+	    cursor: pointer;
+	    width: px;
+	    margin-left: 25px;
+
+	}
+</style>
+
+<script>
+	function convert(){
+		var plain_string = $( "#txt_input" ).val();
+            $.ajax({
+              url:'process.php?plain_string=' + plain_string,
+              complete: function (response) {
+                     		var status = JSON.parse(response.responseText);//parsing status from response received from php
+                          	$('#txt_output').val(status.md5);
+                      },
+              error: function () {
+                        $('#txt_output').val('Bummer: there was an error!');
+                      },
+        });
+      }
+
+</script>
+</html>
