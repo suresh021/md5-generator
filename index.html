@@ -7,9 +7,18 @@
 <body>
 	<div class="container">
 		<input type="text" id="txt_input"" name="txtInput" placeholder="type text to convert" onkeyup="convert();"><br><br>
-		<input type="text" id="txt_output" name="md5"><button>Copy</button>
+		<input type="text" id="txt_output" name="md5"><span><button class="copy-button">Copy</button></span><span id="copied" style="display: none;">Copied</span>
 	</div>
 </body>
 <script src='js/jquery-3.2.1.min.js'></script>
+<script src='js/clipboard.min.js'></script>
 <script src = "js/script.js"></script>
+
+<script>
+	new Clipboard(".copy-button", {
+	  text: function(trigger) {
+	    return $('#txt_output').val();
+	  }
+	});
+</script>
 </html>

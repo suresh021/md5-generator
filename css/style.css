@@ -1,16 +1,18 @@
 	input[type=text] {
-		width: 80%;
+		width: 70%;
 		padding: 12px 20px;
 		margin: 8px 30;
 		display: inline-block;
 		border: 2px solid #ccc;
-		box-sizing: border-box;
-		margin-left: 25px;
 		font-size: 35px;
 	}
 	
 	.container{
-		margin: auto;
+		border: 5px solid red;
+	    text-align: center;
+	    width: 50vw;
+	    padding: 20px;
+	    margin: auto;
 	}
 
 	button {
