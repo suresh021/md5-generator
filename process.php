@@ -1,3 +1,12 @@
+<?php
+/*
+      Author  : Suresh Pokharel
+      Email   : suresh.wrc@gmail.com
+      GitHub  : github.com/suresh021
+      URL     : psuresh.com.np
+*/ 
+?>
+
 <?php 
 	if (isset($_GET['plain_string'])) {
 		$string=$_GET['plain_string'];
